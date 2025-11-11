@@ -148,11 +148,14 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`Health check: http://localhost:${PORT}/health`);
-  console.log(`API endpoints: http://localhost:${PORT}/api/users`);
-});
-
+// Export the app for testing
 module.exports = app;
+
+// Only start server if this file is run directly (not imported by tests)
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+    console.log(`Health check: http://localhost:${PORT}/health`);
+    console.log(`API endpoints: http://localhost:${PORT}/api/users`);
+  });
+}
