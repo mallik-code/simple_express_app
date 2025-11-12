@@ -11,7 +11,11 @@
     "test:coverage": "jest --coverage",
     "test:verbose": "jest --verbose"
   },
-  "keywords": ["express", "legacy", "test"],
+  "keywords": [
+    "express",
+    "legacy",
+    "test"
+  ],
   "author": "AI Code Modernizer Team",
   "license": "MIT",
   "dependencies": {
